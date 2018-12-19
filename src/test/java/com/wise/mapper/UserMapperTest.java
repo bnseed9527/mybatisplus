@@ -25,9 +25,6 @@ public class UserMapperTest {
     public void list(){
 
         List<User>list = userMapper.selectList(null);
-        for (User u :
-                list) {
-            System.out.println(u);
-        }
+        list.forEach(System.out::println);
     }
 }

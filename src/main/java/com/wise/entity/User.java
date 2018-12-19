@@ -46,21 +46,6 @@ public class User implements Serializable {
      */
     private String email;
 
-    private Dept dept;
-
-    /**
-     * 部门id
-     */
-    private int DeptId;
-    /**
-     * 班次实体
-     */
-    private Wtime wtime;
-
-    /**
-     * 班次id
-     */
-    private int wId;
 
 
 }
