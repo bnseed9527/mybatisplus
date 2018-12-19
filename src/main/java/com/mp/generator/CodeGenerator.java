@@ -56,7 +56,6 @@ public class CodeGenerator {
         gc.setAuthor("YsCy丶");
         gc.setOpen(false);
         gc.setFileOverride(true);//是否覆盖已有文件
-        gc.setEnableCache(false);
         //gc.setSwagger2(true);
         gc.setBaseResultMap(true);
         gc.setBaseColumnList(true);
@@ -80,8 +79,6 @@ public class CodeGenerator {
         pc.setParent("com");//父包名。如果为空，将下面子包名必须写全部， 否则就只需写子包名
         mpg.setPackageInfo(pc);
 
-        TemplateConfig templateConfig = new TemplateConfig();
-        templateConfig.setEntity("");
         // 自定义配置
         InjectionConfig cfg = new InjectionConfig() {
             @Override

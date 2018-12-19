@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @author Administrator
  */
 @SpringBootApplication
+@MapperScan("com.wise.mapper")
 public class MybatisplusApplication {
 
 

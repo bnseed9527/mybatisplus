@@ -1,5 +1,6 @@
 package com.wise.mapper;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.wise.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
