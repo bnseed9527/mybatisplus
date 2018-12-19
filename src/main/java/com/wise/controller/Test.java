@@ -59,8 +59,7 @@ public class Test {
 
     public static void main(String[] args) {
 
-//        System.out.println(getWorkDays("201901"));
-        //我成功的提交了GIT项目
+        System.out.println(getWorkDays("201901"));
     }
 
     /**
