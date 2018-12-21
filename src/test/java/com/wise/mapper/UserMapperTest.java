@@ -84,18 +84,23 @@ public class UserMapperTest {
     @Test
     public void update(){
         /**
-         * UpdateWrapper<User>().set 存在SQL问题 暂不采用
+         *
          * 无condition
-         * UPDATE user SET name=?, age=?, email=?, name=?
+         * SELECT id,name,age,email FROM user WHERE name = ?
+         * UPDATE user SET name=?, age=?, email=? WHERE age = ?
          * true
          * UPDATE user SET name=?, age=?, email=?, name=?
          * false
          * UPDATE user SET name=?, age=?, email=?
          */
-        User user = userMapper.selectOne(new QueryWrapper<User>().eq(true,"name","Qa1"));
         //userMapper.update(user, new UpdateWrapper<User>().set(true,"name", "Qa"));
-        userMapper.update(user, new UpdateWrapper<User>().
-                setSql("where name=" + user.getName()));
+//        userMapper.update(user, new UpdateWrapper<User>().
+//                setSql("where name=" + user.getName()));
+        User user = userMapper.selectOne(new QueryWrapper<User>().eq(true,"name","zgr1"));
+        user.setName("xiaoming");
+        user.setEmail("1597654885@sina.com");
+        userMapper.update(user, new UpdateWrapper<User>().eq(true,"age",user.getAge()));
+//
     }
 
     @Test
@@ -174,7 +179,7 @@ public class UserMapperTest {
          * 查出第三页 每页显示三条
          * SELECT id,name,age,email FROM user WHERE age > ? LIMIT ?,?
          */
-       IPage<User> iPage = userMapper.selectPage(new Page<>(3, 3),new QueryWrapper<User>().gt(true,"age",13));
+       IPage<User> iPage = userMapper.selectPage(new Page<>(1, 3),new QueryWrapper<User>().gt(true,"age",13));
         List<User>users = iPage.getRecords();
         users.forEach(System.out::println);
         System.out.println(iPage.getTotal());//共有数据量
